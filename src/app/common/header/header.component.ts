@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "car-header",
+
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })
