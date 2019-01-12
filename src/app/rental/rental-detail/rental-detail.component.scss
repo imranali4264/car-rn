@@ -1,0 +1,68 @@
+@import "variables";
+
+#rentalDetails {
+  .upper-section {
+    img {
+      width: 100%;
+    }
+
+    margin-bottom: 30px;
+  }
+
+  .details-section {
+    color: $main-text-color;
+    .rental {
+      &-type {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      &-title {
+        margin-bottom: 5px;
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      &-city {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      &-color-info {
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 16px;
+
+        span {
+          margin-right: 10px;
+        }
+
+        i {
+          margin-right: 2px;
+        }
+      }
+
+      &-description {
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      &-assets {
+        .title {
+          margin-bottom: 10px;
+          font-weight: 700;
+          font-size: 22px;
+        }
+        span {
+          display: block;
+          margin-bottom: 15px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+//{"threads":[{"position":545,"start":0,"end":544,"connection":"closed"},{"position":545,"start":545,"end":1088,"connection":"open"}],"url":"https://udemy-assets-on-demand2.udemy.com/2018-05-15_07-29-26-d23b7752cf5afbc7ec77ceff911f73fb/original.txt?nva=20181209185811&download=True&filename=styles-of-rental-detail.txt&token=0dd305010eddd38451cc8","method":"GET","port":443,"downloadSize":1088,"headers":{"content-length":"1088","content-type":"application/force-download","etag":"\"d7040b902a7964c992a40351b021a834\"","last-modified":"Tue, 15 May 2018 07:29:27 GMT","accept-ranges":"bytes","server":"AmazonS3","access-control-allow-origin":"*","x-amz-id-2":"2ziuyFpYtkTX0fDv0QU8wmB1CaKmEym29Wn5NbW0+85EgIM7Q3mt2dtcAnA0NXSFIp0kkwGiZT4=","x-amz-meta-qqfilename":"styles-of-rental-detail.txt","x-amz-replication-status":"COMPLETED","x-amz-request-id":"16D40197CEA04C83","x-amz-version-id":"4gTtUEPvN4rYottGbYyaMTgLbDzh66xE","content-disposition":"attachment; filename=styles-of-rental-detail.txt","date":"Sun, 09 Dec 2018 14:31:21 GMT","connection":"close"}}
