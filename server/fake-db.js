@@ -16,7 +16,7 @@ class FakeDb {
       },
       {
         title: "Range Rover",
-        city: "karchi",
+        city: "karachi",
         color: "Black",
         type: "SUV",
         shared: true,
@@ -27,9 +27,9 @@ class FakeDb {
       },
       {
         title: "GLI",
-        city: "Hyderabad",
+        city: "hyderabad",
         color: "White",
-        type: "sedan",
+        type: "Sedan",
         shared: true,
         image:
           "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",

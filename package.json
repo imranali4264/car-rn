@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^7.1.4",
     "@angular/common": "^7.1.4",
     "@angular/compiler": "^7.1.4",
@@ -25,7 +26,9 @@
     "core-js": "^2.4.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.2",
+    "ngx-pipes": "^2.3.6",
     "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "^0.8.19"
   },
