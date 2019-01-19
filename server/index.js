@@ -15,7 +15,7 @@ mongoose
   )
   .then(() => {
     const fakeDb = new FakeDb();
-    fakeDb.seedDb();
+    //fakeDb.seedDb();
   })
   .catch(err => console.log(err));
 mongoose.set("useCreateIndex", true);
