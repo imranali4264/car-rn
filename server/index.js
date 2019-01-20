@@ -7,6 +7,7 @@ const FakeDb = require("./fake-db");
 
 const rentals = require("./routes/rentals");
 const users = require("./routes/users");
+const bookings = require("./routes/bookings");
 
 mongoose
   .connect(
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/api/rentals", rentals);
 app.use("/api/users", users);
+app.use("/api/bookings", bookings);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
