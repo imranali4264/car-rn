@@ -57,7 +57,7 @@ exports.register = (req, res) => {
 
   User.findOne({ email }, (err, existingUser) => {
     if (err) {
-      return res.status(422).send({ errors: mongoErrors(err, errors) });
+      return res.status(422).send({ errors: mongoErrors(err.errors) });
     }
     if (existingUser) {
       return res.status(422).send({
