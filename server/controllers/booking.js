@@ -4,7 +4,7 @@ const User = require("../models/User");
 const { mongoErrors } = require("../helpers/mongoose");
 const moment = require("moment");
 
-exports.createBooking = function(req, res) {
+exports.createBooking = (req, res) => {
   const {
     startAt,
     endAt,
@@ -28,7 +28,7 @@ exports.createBooking = function(req, res) {
   Rental.findById(rental._id)
     .populate("bookings")
     .populate("user")
-    .exec(async function(err, foundRental) {
+    .exec((err, foundRental) => {
       if (err) {
         return res.status(422).send({ errors: mongoErrors(err.errors) });
       }
@@ -48,7 +48,7 @@ exports.createBooking = function(req, res) {
         booking.rental = foundRental;
         foundRental.bookings.push(booking);
 
-        booking.save(function(err) {
+        booking.save(err => {
           if (err) {
             return res.status(422).send(err);
           }
@@ -57,7 +57,7 @@ exports.createBooking = function(req, res) {
           User.updateMany(
             { _id: user.userId },
             { $push: { bookings: booking } },
-            function() {}
+            () => {}
           );
           return res.json({ startAt: booking.startAt, endAt: booking.endAt });
         });
@@ -74,7 +74,7 @@ exports.createBooking = function(req, res) {
     });
 };
 
-isValidBooking = function(proposedBooking, rental) {
+isValidBooking = (proposedBooking, rental) => {
   let isValid = true;
 
   if (rental.bookings && rental.bookings.length > 0) {

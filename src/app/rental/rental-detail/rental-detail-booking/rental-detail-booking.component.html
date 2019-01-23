@@ -1,28 +1,47 @@
 <div class="booking">
   <h3 class="booking-price">
-    ${{ price }} <span class="booking-per-night">Per Hour</span>
+    ${{ rental.hourRate }} <span class="booking-per-hour">Per Hour</span>
   </h3>
   <hr />
-  <label>Dates</label>
-  <input
-    type="text"
-    class="form-control daterangepicker-input"
-    name="daterangeInput"
-    daterangepicker
-    [options]="options"
-    (selected)="selectedDate($event, daterange)"
-  />
-  <div class="form-group">
-    <label for="passenger">Passengers</label>
+  <form #bookingForm="ngForm">
+    <label>Dates</label>
     <input
+      type="text"
+      class="form-control daterangepicker-input"
+      name="daterangeInput"
+      daterangepicker
+      [options]="options"
+      (selected)="selectedDate($event, daterange)"
+    />
+    <div class="form-group">
+      <!-- <label for="hour">Hours</label>
+    <input
+      [(ngModel)]="newBooking.hours"
       type="number"
       class="form-control"
-      id="guests"
+      id="Hours"
       aria-describedby="emailHelp"
-      placeholder=""
-    />
-  </div>
-  <button class="btn btn-danger btn-confirm btn-block">
+    /> -->
+      <label for="passenger">Passengers</label>
+      <input
+        [(ngModel)]="newBooking.passengers"
+        type="number"
+        name="passengers"
+        class="form-control"
+        id="Passengers"
+        aria-describedby="emailHelp"
+        required
+      />
+    </div>
+  </form>
+
+  <button
+    (click)="openConfirmModal(content)"
+    [disabled]="
+      !bookingForm.form.valid || !newBooking.startAt || !newBooking.endAt
+    "
+    class="btn btn-danger btn-confirm btn-block"
+  >
     Reserve Vehicle now
   </button>
   <hr />
@@ -31,3 +50,46 @@
     More than 500 people checked this rental in last month.
   </p>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">
+      Booking Confirmation
+      <p>{{ newBooking.startAt }} To {{ newBooking.endAt }}</p>
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <em> {{ newBooking.totalHours }} {{ newBooking.hours }}</em> Hours /
+    <em> {{ rental.hourRate }}</em> Per Hour
+    <p>
+      Passengers: <em>{{ newBooking.passengers }}</em>
+    </p>
+    <p>
+      Price:<em>{{ newBooking.totalPrice }}$</em>
+    </p>
+    <p>Do You want to confirm your booking</p>
+  </div>
+  <div *ngIf="errors.length > 0" class="alert alert-danger modal-error">
+    <p *ngFor="let error of errors">{{ error.detail }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-car" (click)="createBooking()">
+      Create Confirm
+    </button>
+    <button
+      type="button"
+      class="btn btn-car"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
