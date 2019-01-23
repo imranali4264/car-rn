@@ -1,0 +1,86 @@
+{
+  "rentals": [
+    {
+      "title": "Swift",
+      "city": "karachi",
+      "color": "black",
+      "type": "HatchBack",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 11
+    },
+    {
+      "title": "corolla",
+      "city": "karachi",
+      "color": "white",
+      "type": "sedan",
+      "shared": true,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 9
+    },
+    {
+      "title": "Civic",
+      "city": "hyderabad",
+      "color": "silver",
+      "type": "sedan",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 17
+    },
+    {
+      "title": "Baleno",
+      "city": "sukkur",
+      "color": "golden",
+      "type": "sedan",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 14
+    },
+    {
+      "title": "Aqua",
+      "city": "hyderabad",
+      "color": "white",
+      "type": "HatchBack",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 14
+    },
+    {
+      "title": "Mira",
+      "city": "hyderabad",
+      "color": "black",
+      "type": "HatchBack",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 13
+    },
+    {
+      "title": "Swift",
+      "city": "karachi",
+      "color": "Red",
+      "type": "HatchBack",
+      "shared": false,
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "description": "Very nice car in center of the city.",
+      "hourRate": 19
+    }
+  ],
+  "users": [
+    {
+      "username": "imran",
+      "email": "imran@example.com",
+      "password": "123456"
+    },
+    {
+      "username": "ahsan",
+      "email": "ahsan@example.com",
+      "password": "123456"
+    }
+  ]
+}
