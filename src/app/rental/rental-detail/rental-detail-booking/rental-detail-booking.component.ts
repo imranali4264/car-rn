@@ -8,6 +8,8 @@ import { HelperService } from "../../../common/service/helper.service";
 import { BookingService } from "../../../booking/shared/booking.service";
 import { DaterangePickerComponent } from "ng2-daterangepicker";
 import { ToastrService } from "ngx-toastr";
+import { AuthService } from "../../../auth/shared/auth.service";
+
 import * as moment from "moment";
 
 @Component({
@@ -38,7 +40,8 @@ export class RentalDetailBookingComponent implements OnInit {
     private helper: HelperService,
     private modalService: NgbModal,
     private bookingService: BookingService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public auth: AuthService
   ) {}
 
   ngOnInit() {

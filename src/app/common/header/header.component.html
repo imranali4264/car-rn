@@ -1,20 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="/rentals">RideWithUs</a>
 
-  <form class="form-inline">
+  <div class="form-inline">
     <input
+      #citySearch
+      (keyup.enter)="search(citySearch.value)"
       class="form-control mr-sm-2 car-search"
       type="search"
       placeholder="Search"
       aria-label="Search"
     />
     <button
+      (click)="search(citySearch.value)"
       class="btn btn-outline-success my-2 my-sm-0 btn-car-search"
-      type="submit"
+      type="button"
     >
       Search
     </button>
-  </form>
+  </div>
 
   <button
     class="navbar-toggler"
@@ -43,6 +46,21 @@
         <li class="nav-item">
           <a class="nav-link">{{ auth.getUsername() }}</a>
         </li>
+        <div class="nav-item dropdown clickable">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Owner Section
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/rentals/new">Create Rental</a>
+          </div>
+        </div>
+
         <li class="nav-item clickable">
           <a class="nav-link" (click)="logout()">Logout</a>
         </li>

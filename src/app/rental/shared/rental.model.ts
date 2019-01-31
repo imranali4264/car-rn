@@ -1,5 +1,7 @@
 import { Booking } from "../../booking/shared/booking.model";
 export class Rental {
+  static readonly TYPE = ["Sedan", "Hatch Back", "SUV"];
+
   _id: string;
   title: string;
   color: string;
