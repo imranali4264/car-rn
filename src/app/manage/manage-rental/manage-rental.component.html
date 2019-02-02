@@ -1,0 +1,64 @@
+<section id="userRentals">
+  <h1 class="page-title">My Rentals</h1>
+  <div class="row">
+    <ng-container *ngIf="rentals && rentals.length > 0">
+      <!-- Check for rentals length -->
+      <div *ngFor="let rental of rentals; let i = index" class="col-md-4">
+        <!-- Iterate Rentals -->
+        <div class="card text-center">
+          <div class="card-block">
+            <h4 class="card-title">
+              {{ rental.title | ucwords }} - {{ rental.city | ucwords }}
+            </h4>
+            <!-- Rental Title - Rental City -->
+            <a class="btn btn-ghost" routerLink="/rentals/{{ rental._id }}"
+              >Go to Rental</a
+            >
+            <span *ngIf="rental.bookings.length > 0">
+              <car-manage-rental-booking
+                [bookings]="rental.bookings"
+              ></car-manage-rental-booking>
+            </span>
+          </div>
+          <div class="card-footer text-muted">
+            <p>Created at {{ rental.createdAt | formatDate }}</p>
+            <!-- Created At -->
+            <button
+              (click)="rentalDeleteIndex = i"
+              *ngIf="rentalDeleteIndex !== i"
+              type="button"
+              class="btn btn-car btn-delete"
+            >
+              Delete
+            </button>
+            <div *ngIf="rentalDeleteIndex === i">
+              <p class="confirm-message">Do You Want To Delete This?</p>
+              <button
+                (click)="deleteRental(rental._id)"
+                class="btn btn-success"
+              >
+                Yes
+              </button>
+              <button
+                (click)="rentalDeleteIndex = undefined"
+                class="btn btn-danger"
+              >
+                No
+              </button>
+            </div>
+            <!-- Delete Rental Button -->
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="rentals && rentals.length === 0" class="col-md-8">
+      <!-- Check if rentals length === 0 -->
+      <div class="alert alert-warning">
+        You dont have any rentals currenty created. If you want advertised your
+        vehicle please follow this link.
+        <a class="btn btn-car" routerLink="/rentals/new">Register Rental</a>
+        <!-- Link to rentals/new -->
+      </div>
+    </div>
+  </div>
+</section>
