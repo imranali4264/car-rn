@@ -10,4 +10,7 @@ export class BookingService {
   public createBooking(booking: Booking): Observable<any> {
     return this.http.post("/api/bookings", booking);
   }
+  public getUserBooking(): Observable<any> {
+    return this.http.get("/api/bookings/manage");
+  }
 }

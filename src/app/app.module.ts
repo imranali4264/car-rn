@@ -10,6 +10,7 @@ import { HeaderComponent } from "./common/header/header.component";
 
 import { RentalModule } from "./rental/rental.module";
 import { AuthModule } from "./auth/auth.module";
+import { ManageModule } from "./manage/manage.module";
 
 const routes: Routes = [
   { path: "", redirectTo: "/rentals", pathMatch: "full" }
@@ -22,6 +23,7 @@ const routes: Routes = [
     BrowserModule,
     RentalModule,
     AuthModule,
+    ManageModule,
     NgbModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule
