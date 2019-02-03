@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgPipesModule } from "ngx-pipes";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./common/header/header.component";
@@ -26,7 +27,8 @@ const routes: Routes = [
     ManageModule,
     NgbModule.forRoot(),
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

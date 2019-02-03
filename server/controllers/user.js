@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const { mongoErrors } = require("../helpers/mongoose");
 const jwt = require("jsonwebtoken");
-const config = require("../config/dev");
+const config = require("../config");
 //login user
 exports.login = (req, res) => {
   const { email, password } = req.body;
