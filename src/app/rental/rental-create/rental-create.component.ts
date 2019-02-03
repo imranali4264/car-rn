@@ -16,7 +16,7 @@ export class RentalCreateComponent implements OnInit {
   constructor(private rentalService: RentalService, private router: Router) {}
   handleImageChange() {
     this.newRental.image =
-      "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg";
+      "https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?cs=srgb&dl=car-macro-mini-cooper-35967.jpg&fm=jpg";
   }
 
   ngOnInit() {
